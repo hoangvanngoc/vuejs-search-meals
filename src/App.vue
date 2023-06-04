@@ -1,12 +1,7 @@
 <script setup>
-  import { computed } from 'vue';
-  import store from './store'
-  
-
-  const meals = computed(() => store.state.meals)
-
+  import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <h1>{{ meals }}</h1>
+  <RouterView/>
 </template>
