@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <input type="text" @change="searchMeals" class="rounded border-2 border-grey-200 w-full" placeholder="Search for meals"/>
+        <input type="text" @change="searchMeals" v-model="keyword" class="rounded border-2 border-grey-200 w-full" placeholder="Search for meals"/>
     </div>
     <div class="grid grid-cols-1 px-8 gap-4 md:grid-cols-3">
         <div v-for="meal of meals" :key="meal.idMeal" class="p-2 bg-white shadow rounded-xl">
