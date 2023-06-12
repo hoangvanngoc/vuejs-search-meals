@@ -10,16 +10,15 @@
             <h3 class="text-xl my-4 font-bold text-center">{{ meal.strMeal }}</h3>
             <p class="mt-4 mb-4 text-base text-ellipsis overflow-hidden h-[100px] line-clamp-4">{{ meal.strInstructions }}</p>
             <div class="flex flex-col gap-y-2">
-                <a target="_blank" class="w-full px-8 text-center rounded-6 g-transparent hover:bg-bl.ue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded py-4" :href="meal.strYoutube">Youtube</a>
-                
-                <router-link to="/" class="w-full px-8 text-center text-white rounded-6 bg-blue-500 hover:bg-blue-700 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded py-4">View</router-link>
+               <YoutubeButton :href="meal.strYoutube">Youtube</YoutubeButton>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
+import YoutubeButton from '../components/YoutubeButton.vue';
 import store from '../store';
     
     const keyword = ref('')
