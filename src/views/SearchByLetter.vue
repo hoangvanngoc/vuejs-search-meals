@@ -4,19 +4,17 @@
             {{ letter }}
         </router-link>
     </div>
-    <div class="grid grid-cols-1 px-8 gap-4 md:grid-cols-3">
-        <meal-item v-for="meal of meals" :key="meal.idMeal" :meal="meal"/>
-    </div>
+    <Meals :meals="meals"/>
 </template>
 
 <script setup>
 import { computed, onMounted, watch } from 'vue';
 import store from '../store';
 import { useRoute } from 'vue-router';
-import MealItem from '../components/MealItem.vue';
+import Meals from '../components/Meals.vue';
 
     const route = useRoute()
-    const letters = 'ASBDADASJKDBBSAJHDASJKDBSAJK'.split('')
+    const letters = 'ABCDEFGHIKLMNOJKQWERTYUP'.split('')
     const meals = computed(() => store.state.mealsByLetter)
 
     watch(route, () => {
