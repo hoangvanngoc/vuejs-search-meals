@@ -50,7 +50,6 @@ import YoutubeButton from '../components/YoutubeButton.vue';
     const meal = ref('')
 
     onMounted(() => {
-        console.log('abcd:', route.params)
         axiosClient.get(`lookup.php?i=${route.params.id}`)
         .then(({data}) => {
             meal.value = data.meals[0]
